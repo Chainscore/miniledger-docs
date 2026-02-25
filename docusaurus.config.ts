@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://miniledger.dev',
+  url: 'https://miniledger.cloud',
   baseUrl: '/',
 
   organizationName: 'Chainscore',
@@ -52,7 +52,7 @@ const config: Config = {
         '@type': 'Organization',
         name: 'Chainscore Labs',
         url: 'https://chainscorelabs.com',
-        logo: 'https://miniledger.dev/img/logo.svg',
+        logo: 'https://miniledger.cloud/img/logo.svg',
       }),
     },
   ],
