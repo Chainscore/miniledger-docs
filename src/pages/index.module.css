@@ -1,0 +1,263 @@
+/* Hero */
+.hero {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background: var(--miniledger-mint);
+}
+
+.heroInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.heroLogo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--miniledger-teal);
+  margin: 0 0 1rem;
+}
+
+.heroTagline {
+  font-size: 1.2rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+[data-theme='dark'] .heroTagline {
+  color: #9ca3af;
+}
+
+.heroInstall {
+  display: inline-block;
+  background: var(--ifm-background-color);
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.heroInstall code {
+  font-size: 1rem;
+  color: var(--miniledger-teal);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+[data-theme='dark'] .heroInstall {
+  border-color: #374151;
+}
+
+[data-theme='dark'] .heroInstall code {
+  color: #5cb5a2;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-block;
+  background: var(--miniledger-green);
+  color: #fff;
+  padding: 0.65rem 1.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover {
+  background: #3e9a87;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btnSecondary {
+  display: inline-block;
+  background: var(--ifm-background-color);
+  color: var(--miniledger-teal);
+  padding: 0.65rem 1.75rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--miniledger-green);
+  color: var(--miniledger-green);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .btnSecondary {
+  border-color: #374151;
+  color: #d1d5db;
+}
+
+[data-theme='dark'] .btnSecondary:hover {
+  border-color: #5cb5a2;
+  color: #5cb5a2;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 2rem;
+}
+
+.sectionAlt {
+  padding: 5rem 2rem;
+  background: #fafafa;
+}
+
+[data-theme='dark'] .sectionAlt {
+  background: #0a0a0a;
+}
+
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--miniledger-teal);
+  text-align: center;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: #e5e7eb;
+}
+
+.sectionSubtitle {
+  font-size: 1.05rem;
+  color: #6b7280;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* Cards */
+.cardGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .cardGrid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.75rem;
+  transition: border-color 0.15s;
+}
+
+.card:hover {
+  border-color: var(--miniledger-green);
+}
+
+[data-theme='dark'] .card {
+  border-color: #1f2937;
+}
+
+[data-theme='dark'] .card:hover {
+  border-color: #5cb5a2;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--miniledger-teal);
+  margin: 0 0 0.5rem;
+}
+
+[data-theme='dark'] .cardTitle {
+  color: #e5e7eb;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Code example */
+.codeWrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Comparison table */
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.compTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.compTable th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .compTable th {
+  border-bottom-color: #374151;
+}
+
+.compTable td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+[data-theme='dark'] .compTable td {
+  border-bottom-color: #1f2937;
+}
+
+.compLabel {
+  font-weight: 500;
+  color: var(--miniledger-teal);
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .compLabel {
+  color: #d1d5db;
+}
+
+.compHighlight {
+  color: var(--miniledger-green);
+  font-weight: 500;
+}

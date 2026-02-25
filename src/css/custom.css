@@ -1,0 +1,221 @@
+/* MiniLedger — OpenAI-inspired minimal theme */
+
+:root {
+  /* Brand colors */
+  --ifm-color-primary: #4aaa96;
+  --ifm-color-primary-dark: #3e9a87;
+  --ifm-color-primary-darker: #3a9180;
+  --ifm-color-primary-darkest: #2f7769;
+  --ifm-color-primary-light: #5cb5a2;
+  --ifm-color-primary-lighter: #64b9a7;
+  --ifm-color-primary-lightest: #7ec7b7;
+
+  --ifm-background-color: #ffffff;
+  --ifm-heading-color: #1a3c34;
+  --ifm-font-color-base: #374151;
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --ifm-font-family-monospace: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas,
+    'Liberation Mono', Menlo, monospace;
+
+  --ifm-code-font-size: 90%;
+  --ifm-line-height-base: 1.7;
+  --ifm-spacing-horizontal: 1.5rem;
+  --ifm-global-radius: 6px;
+
+  /* Navbar */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-height: 3.75rem;
+
+  /* Footer */
+  --ifm-footer-background-color: #fafafa;
+  --ifm-footer-color: #6b7280;
+  --ifm-footer-link-color: #374151;
+
+  /* Sidebar */
+  --ifm-menu-color: #6b7280;
+  --ifm-menu-color-active: #4aaa96;
+  --ifm-menu-color-background-active: transparent;
+
+  /* Code blocks */
+  --ifm-code-background: #f6f8fa;
+
+  --miniledger-mint: #e8faf5;
+  --miniledger-teal: #1a3c34;
+  --miniledger-green: #4aaa96;
+
+  --docusaurus-highlighted-code-line-bg: rgba(74, 170, 150, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #5cb5a2;
+  --ifm-color-primary-dark: #49a994;
+  --ifm-color-primary-darker: #40a28c;
+  --ifm-color-primary-darkest: #358674;
+  --ifm-color-primary-light: #6fbdae;
+  --ifm-color-primary-lighter: #78c2b3;
+  --ifm-color-primary-lightest: #95d1c5;
+
+  --ifm-background-color: #111111;
+  --ifm-heading-color: #e5e7eb;
+  --ifm-font-color-base: #d1d5db;
+  --ifm-navbar-background-color: #111111;
+  --ifm-footer-background-color: #0a0a0a;
+  --ifm-footer-color: #9ca3af;
+  --ifm-footer-link-color: #d1d5db;
+  --ifm-code-background: #1e1e1e;
+  --miniledger-mint: #0d2920;
+
+  --docusaurus-highlighted-code-line-bg: rgba(92, 181, 162, 0.15);
+}
+
+/* Navbar */
+.navbar {
+  border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom-color: #1f2937;
+}
+
+.navbar__title {
+  font-weight: 600;
+  color: var(--miniledger-teal);
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #e5e7eb;
+}
+
+.navbar__link {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Content width */
+.container {
+  max-width: 1100px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+article h1 {
+  font-size: 2rem;
+}
+
+/* Code blocks */
+.prism-code {
+  border: 1px solid #e5e7eb;
+  border-radius: var(--ifm-global-radius);
+}
+
+[data-theme='dark'] .prism-code {
+  border-color: #374151;
+}
+
+code {
+  border: 1px solid #e5e7eb;
+  background: var(--ifm-code-background);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+
+[data-theme='dark'] code {
+  border-color: #374151;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+table th {
+  background: #fafafa;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+[data-theme='dark'] table th {
+  background: #1a1a1a;
+  border-bottom-color: #374151;
+}
+
+table td {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+[data-theme='dark'] table td {
+  border-bottom-color: #1f2937;
+}
+
+table tr:hover td {
+  background: #fafafa;
+}
+
+[data-theme='dark'] table tr:hover td {
+  background: #1a1a1a;
+}
+
+/* Sidebar */
+.menu__link {
+  font-size: 0.875rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: transparent;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #e5e7eb;
+}
+
+[data-theme='dark'] .footer {
+  border-top-color: #1f2937;
+}
+
+.footer__title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+}
+
+.footer__link-item {
+  font-size: 0.875rem;
+}
+
+/* TOC */
+.table-of-contents__link {
+  font-size: 0.8rem;
+}
+
+.table-of-contents__link--active {
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+}
+
+/* Docs page */
+.markdown > p {
+  line-height: 1.75;
+}
+
+/* Blog */
+.blog-post-page article header h1 {
+  font-size: 2.2rem;
+}
