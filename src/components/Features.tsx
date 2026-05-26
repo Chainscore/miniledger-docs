@@ -3,63 +3,110 @@ import styles from '../pages/index.module.css';
 
 const features = [
   {
-    title: 'Zero Config',
+    title: 'No platform ceremony',
     description:
-      'No Docker, no Kubernetes, no certificate authorities. A single npm install gives you a production-ready private blockchain.',
+      'No Docker, Kubernetes, certificate authorities, orderer services, or separate ledger runtime to operate.',
   },
   {
-    title: 'SQL Queries',
+    title: 'Queryable ledger state',
     description:
-      'World state lives in SQLite. Run SELECT * FROM world_state directly against your ledger data — no custom query languages.',
+      'World state lives in SQLite, so product teams can inspect ledger data with ordinary SQL instead of custom query APIs.',
   },
   {
-    title: 'Embeddable',
+    title: 'Embeddable by default',
     description:
-      'Import as a library into any Node.js or TypeScript application. No separate processes, no infrastructure overhead.',
+      'Import MiniLedger into a Node.js or TypeScript service and ship a ledger as part of the application.',
   },
 ];
 
 const enterpriseFeatures = [
-  { title: 'Raft Consensus', description: 'Production-grade leader election with log replication and automatic fault tolerance across multi-node clusters.' },
-  { title: 'Smart Contracts', description: 'Write and deploy contracts in plain JavaScript. No Solidity, no Go, no Kotlin — just functions that read and write state.' },
-  { title: 'Per-Record Privacy', description: 'AES-256-GCM field-level encryption with ACL-based access control. No channels needed, no complexity.' },
-  { title: 'On-Chain Governance', description: 'Propose and vote on network changes directly on-chain. Quorum-based decision making with automatic execution.' },
-  { title: 'Block Explorer', description: 'Built-in web dashboard with block/transaction drill-down, state browser, SQL console, and full-text search.' },
-  { title: 'P2P Networking', description: 'WebSocket mesh with automatic peer discovery, reconnection, and chain synchronization across organizations.' },
+  { title: 'Raft consensus', description: 'Leader election, log replication, and fault tolerance across multi-node private clusters.' },
+  { title: 'JavaScript contracts', description: 'Deploy plain JavaScript functions that read and write ledger state without Solidity, Go, or Kotlin.' },
+  { title: 'Per-record privacy', description: 'AES-256-GCM field encryption with ACL-based access control, without channel sprawl.' },
+  { title: 'On-chain governance', description: 'Propose, vote, and execute network changes through quorum-based governance flows.' },
+  { title: 'Explorer included', description: 'Use the dashboard for blocks, transactions, state browsing, SQL console, and full-text search.' },
+  { title: 'P2P networking', description: 'Run a WebSocket mesh with peer discovery, reconnection, and chain synchronization.' },
+];
+
+const solutionGroups = [
+  {
+    title: 'Application teams',
+    items: ['Embed the ledger in a service', 'Keep data local and inspectable', 'Avoid a new infrastructure platform'],
+  },
+  {
+    title: 'Enterprise workflows',
+    items: ['Audit trails', 'Supply chain provenance', 'Compliance evidence'],
+  },
+  {
+    title: 'Consortium pilots',
+    items: ['Multi-party shared state', 'Peer-to-peer synchronization', 'Governance from day one'],
+  },
 ];
 
 export default function Features(): React.JSX.Element {
   return (
     <>
-      <section className={styles.section}>
+      <section id="solutions" className={styles.solutionBand}>
         <div className={styles.sectionInner}>
-          <h2 className={styles.sectionTitle}>Why MiniLedger?</h2>
-          <p className={styles.sectionSubtitle}>
-            A lightweight alternative to Hyperledger Fabric, R3 Corda, and Quorum for teams that
-            need a private blockchain without the operational burden.
-          </p>
-          <div className={styles.cardGrid3}>
-            {features.map((f) => (
-              <div key={f.title} className={styles.card}>
-                <h3 className={styles.cardTitle}>{f.title}</h3>
-                <p className={styles.cardDesc}>{f.description}</p>
+          <div className={styles.solutionLayout}>
+            <div>
+              <h2 className={styles.solutionTitle}>Built for private ledgers that need to ship</h2>
+              <p className={styles.solutionText}>
+                MiniLedger gives engineering teams the control model of a private
+                blockchain with the deployment shape of a normal Node.js dependency.
+              </p>
+            </div>
+            <div className={styles.solutionGrid}>
+              {solutionGroups.map((group) => (
+                <div key={group.title} className={styles.solutionColumn}>
+                  <h3>{group.title}</h3>
+                  <ul>
+                    {group.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className={styles.section}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Why teams choose MiniLedger</h2>
+            <p className={styles.sectionSubtitle}>
+              A lightweight alternative to Hyperledger Fabric, R3 Corda, and Quorum
+              for teams that need a private blockchain without the operational burden.
+            </p>
+          </div>
+          <div className={styles.featureGrid}>
+            {features.map((feature, index) => (
+              <div key={feature.title} className={styles.featureCard}>
+                <span className={styles.cardNumber}>0{index + 1}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className={styles.sectionAlt}>
+      <section id="capabilities" className={styles.section}>
         <div className={styles.sectionInner}>
-          <h2 className={styles.sectionTitle}>Enterprise-Grade Features</h2>
-          <p className={styles.sectionSubtitle}>
-            Everything you need for a production consortium blockchain — without the complexity.
-          </p>
-          <div className={styles.cardGrid3}>
-            {enterpriseFeatures.map((f) => (
-              <div key={f.title} className={styles.card}>
-                <h3 className={styles.cardTitle}>{f.title}</h3>
-                <p className={styles.cardDesc}>{f.description}</p>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Enterprise-grade primitives, Node-native shape</h2>
+            <p className={styles.sectionSubtitle}>
+              The core primitives are built in, but exposed in a way that feels
+              familiar to product engineers.
+            </p>
+          </div>
+          <div className={styles.capabilityGrid}>
+            {enterpriseFeatures.map((feature) => (
+              <div key={feature.title} className={styles.capabilityCard}>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
               </div>
             ))}
           </div>

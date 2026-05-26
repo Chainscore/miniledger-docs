@@ -17,18 +17,55 @@ const results = await node.query(
   ['account:%']
 );`;
 
+const rows = [
+  { key: 'account:alice', version: '9', value: '{ balance: 1000 }' },
+  { key: 'account:bob', version: '9', value: '{ balance: 725 }' },
+  { key: 'shipment:7f2', version: '8', value: '{ status: "cleared" }' },
+];
+
 export default function CodeExample(): React.JSX.Element {
   return (
-    <section className={styles.section}>
+    <section id="quickstart" className={styles.sectionAlt}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>Get Started in 5 Lines</h2>
-        <p className={styles.sectionSubtitle}>
-          Embed a private blockchain directly into your Node.js application.
-        </p>
-        <div className={styles.codeWrapper}>
-          <CodeBlock language="typescript" title="app.ts">
-            {code}
-          </CodeBlock>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>From install to queryable ledger state</h2>
+          <p className={styles.sectionSubtitle}>
+            Start a private ledger, submit signed transactions, and inspect state
+            with SQL from the same application runtime.
+          </p>
+        </div>
+
+        <div className={styles.codeShowcase}>
+          <div className={styles.codePanel}>
+            <CodeBlock language="typescript" title="app.ts">
+              {code}
+            </CodeBlock>
+          </div>
+
+          <div className={styles.queryPanel}>
+            <div className={styles.queryHeader}>
+              <span>world_state</span>
+              <code>SELECT key, value FROM world_state;</code>
+            </div>
+            <table className={styles.queryTable}>
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Version</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row) => (
+                  <tr key={row.key}>
+                    <td>{row.key}</td>
+                    <td>{row.version}</td>
+                    <td>{row.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>

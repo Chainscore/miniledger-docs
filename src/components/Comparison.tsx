@@ -16,12 +16,15 @@ const rows = [
 
 export default function Comparison(): React.JSX.Element {
   return (
-    <section className={styles.sectionAlt}>
+    <section id="comparison" className={styles.section}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>How It Compares</h2>
-        <p className={styles.sectionSubtitle}>
-          MiniLedger vs Hyperledger Fabric, R3 Corda, and Quorum.
-        </p>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>How it compares</h2>
+          <p className={styles.sectionSubtitle}>
+            MiniLedger is designed for teams that want a private ledger without
+            adopting a full blockchain operations platform.
+          </p>
+        </div>
         <div className={styles.tableWrapper}>
           <table className={styles.compTable}>
             <thead>

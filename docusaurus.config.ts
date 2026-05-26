@@ -120,6 +120,8 @@ const config: Config = {
           label: 'API',
           position: 'left',
         },
+        { to: '/#solutions', label: 'Solutions', position: 'left' },
+        { to: '/#comparison', label: 'Comparison', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/Chainscore/miniledger',

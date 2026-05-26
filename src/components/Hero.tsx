@@ -5,33 +5,37 @@ import styles from '../pages/index.module.css';
 export default function Hero(): React.JSX.Element {
   return (
     <section className={styles.hero}>
-      <div className={styles.heroInner}>
+      <div className={styles.heroImageStrip}>
         <img
-          src="/img/logo.svg"
-          alt="MiniLedger"
-          className={styles.heroLogo}
-          width={64}
-          height={64}
+          src="/img/dashboard-screenshot.png"
+          alt="MiniLedger dashboard showing block height, peers, state keys, block rate, recent blocks, transactions, and consensus status"
+          width={1280}
+          height={720}
         />
-        <h1 className={styles.heroTitle}>MiniLedger</h1>
-        <p className={styles.heroTagline}>
-          Zero-config private blockchain framework for Node.js.
-          <br />
-          Embeddable, SQL-queryable, production-ready.
-        </p>
-        <div className={styles.heroInstall}>
-          <code>npm install miniledger</code>
+      </div>
+
+      <div className={styles.heroEditorial}>
+        <div className={styles.heroScreenshotSmall}>
+          <img
+            src="/img/dashboard-screenshot.png"
+            alt=""
+            width={1280}
+            height={720}
+          />
         </div>
-        <div className={styles.heroButtons}>
-          <Link className={styles.btnPrimary} to="/docs/getting-started/installation">
-            Get Started
-          </Link>
-          <Link
-            className={styles.btnSecondary}
-            href="https://github.com/Chainscore/miniledger"
-          >
-            GitHub
-          </Link>
+
+        <div className={styles.heroNote}>
+          <span>PRIVATE LEDGER / NODE.JS</span>
+          <h2>Embedded ledger infrastructure without the platform weight.</h2>
+          <p>
+            Blocks, transactions, peer state, governance, and SQL-readable world
+            state stay close to the application instead of becoming a separate
+            operations program.
+          </p>
+          <div className={styles.heroNoteLinks}>
+            <Link to="/docs/getting-started/quickstart">Quickstart</Link>
+            <Link to="#architecture">Architecture</Link>
+          </div>
         </div>
       </div>
     </section>
